@@ -1,0 +1,208 @@
+### Коллекция запросов (VS Code REST Client / JetBrains HTTP Client).
+### Сквозной сценарий: клиент → заявка → проверка банком → решение → подпись → выдача.
+### База: через nginx (compose) http://localhost:8080/api/v1 либо напрямую uvicorn http://localhost:8000/api/v1
+@base = http://localhost:8080/api/v1
+
+### ── 0. Здоровье ──────────────────────────────────────────────────────
+GET {{base}}/health/live
+
+###
+GET {{base}}/health/ready
+
+###
+GET {{base}}/version
+
+### ── 1. Вход клиента (демо-аккаунт, 5 организаций с заявками) ────────
+# @name clientLogin
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{ "email": "client@demo.ru", "password": "Demo2026!" }
+
+###
+@ct = {{clientLogin.response.body.access_token}}
+
+### Организации клиента
+# @name orgs
+GET {{base}}/organizations
+Authorization: Bearer {{ct}}
+
+###
+@org = {{orgs.response.body.$[?(@.inn=='7701234567')].id}}
+
+### ── 2. Каталог и расчёты ────────────────────────────────────────────
+GET {{base}}/products?organization_id={{org}}
+Authorization: Bearer {{ct}}
+
+###
+POST {{base}}/products/business_loan/quote
+Authorization: Bearer {{ct}}
+Content-Type: application/json
+
+{ "amount": 1500000, "months": 24, "scheme": "annuity", "organization_id": "{{org}}" }
+
+###
+POST {{base}}/products/business_loan/schedule
+Authorization: Bearer {{ct}}
+Content-Type: application/json
+
+{ "amount": 1500000, "months": 12, "scheme": "diff" }
+
+### Аналитика компании
+GET {{base}}/organizations/{{org}}/analytics
+Authorization: Bearer {{ct}}
+
+### Умная лента
+GET {{base}}/feed?organization_id={{org}}
+Authorization: Bearer {{ct}}
+
+### ── 3. Подача заявки ────────────────────────────────────────────────
+PUT {{base}}/organizations/{{org}}/draft
+Authorization: Bearer {{ct}}
+Content-Type: application/json
+
+{ "product_id": "business_loan", "replace": true, "amount": 1500000, "months": 24, "goal": "Закупка товара" }
+
+### Демо-документ (синтетический PDF)
+POST {{base}}/documents/sample
+Authorization: Bearer {{ct}}
+Content-Type: application/json
+
+{ "organization_id": "{{org}}" }
+
+### Подача (Idempotency-Key обязателен для POST-мутаций)
+# @name submit
+POST {{base}}/applications
+Authorization: Bearer {{ct}}
+Idempotency-Key: demo-submit-0001
+Content-Type: application/json
+
+{ "organization_id": "{{org}}", "consent": true }
+
+###
+@app = {{submit.response.body.id}}
+
+### ── 4. Банк ─────────────────────────────────────────────────────────
+# @name opLogin
+POST {{base}}/auth/operator/login
+Content-Type: application/json
+
+{ "operator_id": "OP-2026", "password": "Alfa2026!" }
+
+###
+@bt = {{opLogin.response.body.access_token}}
+
+### Очередь
+GET {{base}}/bank/applications?status=submitted
+Authorization: Bearer {{bt}}
+
+### Взять в работу
+POST {{base}}/bank/applications/{{app}}/assign
+Authorization: Bearer {{bt}}
+
+### Запустить автопроверку (ФНС → БКИ → скоринг), ход — по SSE
+POST {{base}}/bank/applications/{{app}}/check
+Authorization: Bearer {{bt}}
+
+### Состояние проверки
+GET {{base}}/bank/applications/{{app}}/check
+Authorization: Bearer {{bt}}
+
+### Карточка заявки (скоринг, факторы, внешние проверки)
+GET {{base}}/bank/applications/{{app}}
+Authorization: Bearer {{bt}}
+
+### Запросить документы
+POST {{base}}/bank/applications/{{app}}/request-info
+Authorization: Bearer {{bt}}
+Idempotency-Key: demo-info-0001
+Content-Type: application/json
+
+{
+  "items": [
+    { "kind": "document", "title": "Справка о доходах" },
+    { "kind": "document", "title": "Действующие кредитные договоры" },
+    { "kind": "data", "title": "Платежи по действующим кредитам в месяц" },
+    { "kind": "clarify", "title": "Откуда поступает основная выручка?" }
+  ],
+  "message": "Нужно закрыть каждый пункт"
+}
+
+### Решение оператора (альтернатива / отказ / одобрение)
+POST {{base}}/bank/applications/{{app}}/decision
+Authorization: Bearer {{bt}}
+Idempotency-Key: demo-decision-0001
+Content-Type: application/json
+
+{ "decision": "approved", "reason": "Показатели в норме, просрочек нет" }
+
+### Правила скоринга
+GET {{base}}/bank/scoring/rules
+Authorization: Bearer {{bt}}
+
+### Создать демо-сценарий: good | alt | manual | bad
+POST {{base}}/bank/demo/scenarios
+Authorization: Bearer {{bt}}
+Content-Type: application/json
+
+{ "kind": "alt" }
+
+### ── 5. Клиент: подпись и выдача (имитация) ──────────────────────────
+GET {{base}}/applications/{{app}}
+Authorization: Bearer {{ct}}
+
+###
+GET {{base}}/applications/{{app}}/contract
+Authorization: Bearer {{ct}}
+
+###
+POST {{base}}/applications/{{app}}/sign
+Authorization: Bearer {{ct}}
+Idempotency-Key: demo-sign-0001
+Content-Type: application/json
+
+{ "agreed": true }
+
+###
+POST {{base}}/applications/{{app}}/fund
+Authorization: Bearer {{ct}}
+Idempotency-Key: demo-fund-0001
+Content-Type: application/json
+
+{}
+
+### Журнал событий заявки (append-only)
+GET {{base}}/applications/{{app}}/events
+Authorization: Bearer {{ct}}
+
+### ── 6. Аудит банка и проверка цепочки хэшей ─────────────────────────
+GET {{base}}/bank/audit
+Authorization: Bearer {{bt}}
+
+###
+GET {{base}}/bank/audit/verify
+Authorization: Bearer {{bt}}
+
+### ── 7. Ассистент и поддержка ────────────────────────────────────────
+# @name conv
+POST {{base}}/assistant/conversations
+Authorization: Bearer {{ct}}
+
+###
+POST {{base}}/assistant/conversations/{{conv.response.body.id}}/messages
+Authorization: Bearer {{ct}}
+Content-Type: application/json
+
+{ "text": "Какие документы нужны для заявки?" }
+
+###
+POST {{base}}/assistant/conversations/{{conv.response.body.id}}/escalate
+Authorization: Bearer {{ct}}
+
+### ── 8. Обновление токена и выход ────────────────────────────────────
+POST {{base}}/auth/refresh
+
+###
+POST {{base}}/auth/logout
+
+### ── 9. SSE (в браузере/curl): curl -N "{{base}}/events/stream?access_token=<token>"

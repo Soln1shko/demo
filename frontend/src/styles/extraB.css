@@ -1,0 +1,6 @@
+/* Дополнительные стили блока B (если оригинального style.css не хватило). */
+.news-reason { margin-top: 8px; }
+.news-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin-top: 10px; }
+.news-actions .link { margin-top: 0; }
+.news-dismiss { opacity: 0.7; }
+.news-dismiss:hover { opacity: 1; }

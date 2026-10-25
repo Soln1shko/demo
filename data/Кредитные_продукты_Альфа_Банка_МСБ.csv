@@ -1,0 +1,12 @@
+product_id,product_name,segment,product_family,purpose_tags,min_amount_rub,max_amount_rub,min_term_months,max_term_months,pricing_type,collateral_policy,new_business_allowed,marketplace_required,source_url,effective_at
+business_loan,Бизнес-кредит одной суммой,msb,term_loan,"working_capital;development;asset_purchase;refinancing",300000,150000000,12,120,annual_rate_from,optional,false,false,https://alfabank.ru/sme/profits/businesscredit/,2026-10-22
+credit_line,Кредитная линия,msb,credit_line,"working_capital;development",300000,60000000,12,60,annual_rate_from,depends_on_variant,false,false,https://alfabank.ru/sme/profits/creditline/adv/,2026-10-22
+alfa_start,Альфа-Старт,msb,revolving_credit_line,"working_capital;equipment;services",50000,1000000,1,12,daily_rate_from,none,true,false,https://alfabank.ru/sme/profits/alfastart/,2026-10-22
+business_pledge_loan,Деньги на дело,msb,secured_term_loan,"business_start;development;asset_purchase",1000000,150000000,12,120,annual_rate_from,required,true,false,https://alfabank.ru/sme/profits/lombardnyj_kredit/,2026-10-22
+business_mortgage,Бизнес-ипотека,msb,secured_term_loan,"commercial_property_purchase",0,150000000,0,120,annual_rate_from,required,false,false,https://alfabank.ru/sme/profits/businessipoteka/,2026-10-22
+business_auto_loan,Автокредит для бизнеса,msb,secured_term_loan,"vehicle_purchase;special_equipment",0,50000000,0,120,annual_rate_from,required,true,false,https://alfabank.ru/sme/profits/autocredit/,2026-10-22
+overdraft,Овердрафт,msb,overdraft,"cash_gap;working_capital",300000,20000000,0,12,annual_rate_from,none,false,false,https://alfabank.ru/sme/profits/overdraft/,2026-10-22
+seller_credit,Альфа-Селлер Кредит,msb,revolving_credit_line,"marketplace_working_capital;inventory",0,20000000,1,12,monthly_overpayment_from,none,false,true,https://alfabank.ru/sme/profits/,2026-10-22
+business_refinancing,Рефинансирование бизнес-кредитов,msb,refinancing,"refinancing;development",300000,150000000,12,120,annual_rate_from,optional,false,false,https://alfabank.ru/sme/profits/,2026-10-22
+business_credit_card,Кредитная карта для бизнеса,msb,business_credit_card,"short_term_expenses",0,1000000,0,2,grace_period_and_fee,none,false,false,https://alfabank.ru/sme/profits/,2026-10-22
+partner_installment,Кредит или рассрочка у партнёра,msb,partner_financing,"partner_purchase",10000,20000000,0,0,partner_offer,depends_on_offer,false,false,https://alfabank.ru/sme/profits/,2026-10-22

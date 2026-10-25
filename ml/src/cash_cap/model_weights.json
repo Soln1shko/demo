@@ -1,0 +1,25 @@
+{
+  "version": "synthetic-cash-gap-logreg-1",
+  "intercept": -0.05726722906216545,
+  "weights": {
+    "current_balance_to_outflow": -2.15339713683564,
+    "net_cash_flow_ratio": -0.9433485994211777,
+    "outflow_volatility": 0.43586876863446367,
+    "minimum_balance_to_outflow": -1.7446523080906684,
+    "negative_balance_days_share": 0.9882484094991625
+  },
+  "means": {
+    "current_balance_to_outflow": 7.100778184761996,
+    "net_cash_flow_ratio": -0.6039179871712835,
+    "outflow_volatility": 0.410596037543503,
+    "minimum_balance_to_outflow": 3.9188579329156323,
+    "negative_balance_days_share": 0.20454
+  },
+  "scales": {
+    "current_balance_to_outflow": 28.39496816859073,
+    "net_cash_flow_ratio": 2.14086475125828,
+    "outflow_volatility": 1.0,
+    "minimum_balance_to_outflow": 26.17822456142277,
+    "negative_balance_days_share": 1.0
+  }
+}

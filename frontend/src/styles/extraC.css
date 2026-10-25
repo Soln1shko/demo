@@ -1,0 +1,83 @@
+/* Дополнительные стили блока C («Кабинет банка»). Оригинального CSS для этих элементов не было:
+   пагинация, внешние проверки, факторы скоринга, переписка в обращениях. */
+
+.crm-pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 18px 0 4px;
+  font-size: 12px;
+  color: #999;
+}
+.crm-pager .link {
+  font-size: 12px;
+}
+.crm-pager .link:disabled {
+  opacity: .35;
+  cursor: default;
+}
+
+.operator-docs .doc-download {
+  margin-left: auto;
+  flex: none;
+}
+
+.ext-check {
+  margin: 16px 0 22px;
+  padding: 18px 20px;
+  border: 1px solid #3b3b40;
+  border-radius: 16px;
+}
+.ext-check-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+.ext-check-head b {
+  font-size: 14px;
+}
+.ext-check .operator-facts {
+  margin: 18px 0 12px;
+}
+.ext-check > small {
+  display: block;
+  font-size: 11px;
+}
+
+.factor-line {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+.factor-line b.negative {
+  color: #ff817a;
+}
+.factor-line b {
+  white-space: nowrap;
+}
+
+.note-status {
+  display: block;
+  margin-top: 8px;
+  font-size: 11px;
+}
+
+.ticket-meta {
+  display: block;
+  margin-top: 8px;
+  font-size: 11px;
+  color: #999;
+}
+.ticket-client {
+  background: transparent;
+  border: 1px solid #3b3b40;
+}
+.ticket-actions {
+  margin-top: 14px;
+}
+.ticket > small .link {
+  font-size: inherit;
+}

@@ -1,0 +1,22 @@
+product_id,product_name,segment,product_family,purpose_tags,eligibility_tags,source_url,effective_at
+business_account,Расчётный счёт,msb,settlement_account,"payments;statements;employee_access","ip;ooo",https://alfabank.ru/sme/,2026-10-22
+rko_zero,Тариф Ноль за обслуживание,msb,rko_tariff,"business_start;low_activity","ip;ooo;low_transaction_volume",https://alfabank.ru/sme/,2026-10-22
+rko_simple,Тариф Простой,msb,rko_tariff,"settlements;stable_small_business","ip;ooo;small_business",https://alfabank.ru/sme/,2026-10-22
+rko_fast_growth,Тариф Быстрое развитие,msb,rko_tariff,"settlements;growing_business","ip;ooo;growing_business",https://alfabank.ru/sme/,2026-10-22
+rko_active,Тариф Активные расчёты,msb,rko_tariff,"settlements;high_transaction_volume","ip;ooo;high_transaction_volume",https://alfabank.ru/sme/,2026-10-22
+business_online,Альфа-Бизнес Онлайн и Мобайл,msb,digital_banking,"payments;documents;employee_roles","business_account_holder",https://alfabank.ru/sme/,2026-10-22
+business_card,Бизнес-карты и Альфа-Cash,msb,business_card,"business_expenses;cash_withdrawal;corporate_payments","business_account_holder",https://alfabank.ru/sme/,2026-10-22
+merchant_acquiring,Торговый эквайринг,msb,acquiring,"offline_payments;point_of_sale","offline_sales",https://alfabank.ru/sme/,2026-10-22
+internet_acquiring,Интернет-эквайринг,msb,acquiring,"online_payments;website;payment_link;qr","online_sales",https://alfabank.ru/sme/,2026-10-22
+sbp_business,СБП для бизнеса,msb,payment_acceptance,"qr_payments;online_payments;offline_payments","merchant",https://alfabank.ru/sme/,2026-10-22
+alfa_kassa,Альфа-Касса,msb,cash_register,"offline_payments;online_payments;fiscal_receipts","merchant",https://alfabank.ru/sme/,2026-10-22
+alfapos,AlfaPOS и мобильный терминал,msb,payment_acceptance,"smartphone_payments;mobile_sales","merchant",https://alfabank.ru/sme/,2026-10-22
+payroll_project,Зарплатный проект и Альфа-Зарплата,msb,payroll,"salary_payments;employee_cards","employees",https://alfabank.ru/sme/,2026-10-22
+ved,ВЭД и валютный контроль,msb,foreign_trade,"foreign_trade;currency_accounts;international_payments","foreign_contracts",https://alfabank.ru/sme/,2026-10-22
+business_accounting,Бухгалтерия для ИП и ООО,msb,accounting,"taxes;reporting;accounting","ip;ooo",https://alfabank.ru/sme/,2026-10-22
+marketplace_services,Сервисы для маркетплейсов,msb,marketplace_services,"marketplace_sales;analytics;settlements","marketplace_seller",https://alfabank.ru/sme/,2026-10-22
+business_registration,Регистрация бизнеса,msb,business_registration,"business_start;registration","new_business",https://alfabank.ru/sme/,2026-10-22
+electronic_signature,Электронная подпись и документы,msb,digital_documents,"document_signing;reporting","ip;ooo",https://alfabank.ru/sme/,2026-10-22
+cash_management,Расчёты и cash management,corporate,cash_management,"liquidity;payments;group_accounts","annual_turnover_from_500m",https://alfabank.ru/corporate/,2026-10-22
+collection,Эквайринг и инкассация,corporate,collection,"payment_acceptance;cash_collection","annual_turnover_from_500m",https://alfabank.ru/corporate/,2026-10-22
+corporate_letter_of_credit,Аккредитивы,corporate,settlement_guarantee,"secure_settlements;trade","annual_turnover_from_500m",https://alfabank.ru/corporate/,2026-10-22

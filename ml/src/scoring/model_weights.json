@@ -1,0 +1,61 @@
+{
+  "version": "synthetic-logreg-1",
+  "intercept": -0.5487153115714234,
+  "numeric_weights": {
+    "requested_amount": 0.26301359368140215,
+    "term_months": 0.4422673704100588,
+    "business_age_months": -0.48513464974494125,
+    "monthly_revenue": -0.5443659722251405,
+    "net_margin_percent": -0.431340189359398,
+    "debt_to_revenue_ratio": 0.7327094405352212,
+    "credit_history_score": -0.7503889033304515,
+    "has_overdue_debt": 0.9417344059792735,
+    "has_collateral": -0.259598815927393
+  },
+  "numeric_means": {
+    "requested_amount": 9519507.890333334,
+    "term_months": 59.96816666666667,
+    "business_age_months": 119.1985,
+    "monthly_revenue": 6028449.203833333,
+    "net_margin_percent": 23.07313333333333,
+    "debt_to_revenue_ratio": 2.0107581666666667,
+    "credit_history_score": 628.1535,
+    "has_overdue_debt": 0.11883333333333333,
+    "has_collateral": 0.3466666666666667
+  },
+  "numeric_scales": {
+    "requested_amount": 5775884.059881996,
+    "term_months": 34.46161371689118,
+    "business_age_months": 69.66829573832945,
+    "monthly_revenue": 3442216.5731037734,
+    "net_margin_percent": 12.679358010123734,
+    "debt_to_revenue_ratio": 1.149694879964523,
+    "credit_history_score": 187.06873675492474,
+    "has_overdue_debt": 1.0,
+    "has_collateral": 1.0
+  },
+  "categorical_weights": {
+    "product_id": {
+      "business_loan": -0.21505711692777632,
+      "credit_line": -0.09434020313945225,
+      "alfa_start": -0.0322666705752193,
+      "business_pledge_loan": -0.21505711692777632,
+      "business_mortgage": -0.21505711692777632,
+      "business_auto_loan": -0.21505711692777632,
+      "seller_credit": -0.12531428940285302,
+      "overdraft": -0.08173703152612263,
+      "business_refinancing": -0.21505711692777632,
+      "business_credit_card": -0.0322666705752193,
+      "partner_installment": -0.0322666705752193
+    },
+    "legal_form": {
+      "ip": -0.25068100989082853,
+      "ooo": -0.2980343016805945
+    }
+  },
+  "risk_bands": [
+    {"upper_bound": 0.15, "name": "низкий"},
+    {"upper_bound": 0.35, "name": "умеренный"},
+    {"upper_bound": 1.0, "name": "высокий"}
+  ]
+}

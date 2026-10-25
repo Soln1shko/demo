@@ -1,0 +1,2 @@
+/* Порядок важен: перенесённый style.css (legacy.css) грузится первым, утилиты Tailwind — поверх. */
+@tailwind utilities;

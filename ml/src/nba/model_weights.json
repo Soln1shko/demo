@@ -1,0 +1,347 @@
+{
+  "version": "synthetic-nba-logreg-1",
+  "product_weights": {
+    "business_account": {
+      "intercept": 1.293042019416341,
+      "weights": {
+        "legal_form_ooo": 0.19607855986518768,
+        "business_age_months": 0.4458619310031611,
+        "monthly_turnover": 0.44595509067510114,
+        "monthly_payment_count": 0.4853275266739756,
+        "online_sales_share": 0.43980100247526493,
+        "has_business_account": -6.9719568691900475,
+        "has_website": 0.20202286406165063,
+        "has_offline_point": 0.23642221060664848,
+        "sells_on_marketplaces": 0.14452900124406604,
+        "employee_count": 0.42223663463575867,
+        "has_foreign_trade": 0.08845203317184741,
+        "needs_tax_reporting": 0.26211631962856685,
+        "uses_electronic_documents": 0.19516769055196423,
+        "wants_business_registration": 0.12542414368783936
+      }
+    },
+    "rko_zero": {
+      "intercept": -1.3833429635641543,
+      "weights": {
+        "legal_form_ooo": -0.24556639733111915,
+        "business_age_months": -1.2798248663990786,
+        "monthly_turnover": -0.3487848194521035,
+        "monthly_payment_count": -0.3949839438828981,
+        "online_sales_share": -0.3811052381124445,
+        "has_business_account": -0.27214612468763344,
+        "has_website": -0.25345079030271894,
+        "has_offline_point": -0.044493589042894036,
+        "sells_on_marketplaces": -0.010957037064064956,
+        "employee_count": -0.5001073162442796,
+        "has_foreign_trade": -0.1058143133712841,
+        "needs_tax_reporting": -0.14874165096029512,
+        "uses_electronic_documents": -0.2130822090404449,
+        "wants_business_registration": 5.157077806292596
+      }
+    },
+    "rko_simple": {
+      "intercept": -1.6731649176175576,
+      "weights": {
+        "legal_form_ooo": -0.6484564018467299,
+        "business_age_months": -0.7420845177867058,
+        "monthly_turnover": -0.9473541599586494,
+        "monthly_payment_count": -0.9406979408592961,
+        "online_sales_share": -0.7874997645862786,
+        "has_business_account": -0.9114688843626056,
+        "has_website": -0.6768553061076586,
+        "has_offline_point": -0.5849106977812657,
+        "sells_on_marketplaces": -0.3393138871430916,
+        "employee_count": -0.7615608807359231,
+        "has_foreign_trade": -0.1373971011588389,
+        "needs_tax_reporting": -0.7399799023780296,
+        "uses_electronic_documents": -0.7066526285617218,
+        "wants_business_registration": -0.1558690323893524
+      }
+    },
+    "rko_fast_growth": {
+      "intercept": 0.546399669109176,
+      "weights": {
+        "legal_form_ooo": 0.10333294236121184,
+        "business_age_months": 0.21593257801481228,
+        "monthly_turnover": 0.3022977105869002,
+        "monthly_payment_count": -6.6402971927668135,
+        "online_sales_share": 0.2340864006302699,
+        "has_business_account": 0.1732505769411667,
+        "has_website": 0.19458306917830048,
+        "has_offline_point": 0.10210757341438899,
+        "sells_on_marketplaces": -0.009749310308107393,
+        "employee_count": 0.16138401656916654,
+        "has_foreign_trade": 0.10487153526660964,
+        "needs_tax_reporting": -0.009601225193277559,
+        "uses_electronic_documents": 0.1032378010864212,
+        "wants_business_registration": -0.017345288739071704
+      }
+    },
+    "rko_active": {
+      "intercept": -0.6106709179270596,
+      "weights": {
+        "legal_form_ooo": -0.1064143006942606,
+        "business_age_months": -0.2406869247209585,
+        "monthly_turnover": -0.22562896945582162,
+        "monthly_payment_count": 6.70065904091239,
+        "online_sales_share": -0.2336781400380582,
+        "has_business_account": -0.16310772716411615,
+        "has_website": -0.17853296151423875,
+        "has_offline_point": -0.1084815169640107,
+        "sells_on_marketplaces": 0.0038371981969525203,
+        "employee_count": -0.16960078023556047,
+        "has_foreign_trade": -0.13022739338324885,
+        "needs_tax_reporting": 0.0013044090995484846,
+        "uses_electronic_documents": -0.09635818566953737,
+        "wants_business_registration": 0.030114943850477964
+      }
+    },
+    "business_online": {
+      "intercept": -1.293042019416341,
+      "weights": {
+        "legal_form_ooo": -0.19607855986518766,
+        "business_age_months": -0.4458619310031612,
+        "monthly_turnover": -0.44595509067510103,
+        "monthly_payment_count": -0.4853275266739756,
+        "online_sales_share": -0.43980100247526493,
+        "has_business_account": 6.9719568691900475,
+        "has_website": -0.20202286406165063,
+        "has_offline_point": -0.23642221060664853,
+        "sells_on_marketplaces": -0.14452900124406606,
+        "employee_count": -0.4222366346357587,
+        "has_foreign_trade": -0.08845203317184744,
+        "needs_tax_reporting": -0.26211631962856685,
+        "uses_electronic_documents": -0.19516769055196428,
+        "wants_business_registration": -0.12542414368783936
+      }
+    },
+    "business_card": {
+      "intercept": -1.293042019416341,
+      "weights": {
+        "legal_form_ooo": -0.19607855986518766,
+        "business_age_months": -0.4458619310031612,
+        "monthly_turnover": -0.44595509067510103,
+        "monthly_payment_count": -0.4853275266739756,
+        "online_sales_share": -0.43980100247526493,
+        "has_business_account": 6.9719568691900475,
+        "has_website": -0.20202286406165063,
+        "has_offline_point": -0.23642221060664853,
+        "sells_on_marketplaces": -0.14452900124406606,
+        "employee_count": -0.4222366346357587,
+        "has_foreign_trade": -0.08845203317184744,
+        "needs_tax_reporting": -0.26211631962856685,
+        "uses_electronic_documents": -0.19516769055196428,
+        "wants_business_registration": -0.12542414368783936
+      }
+    },
+    "merchant_acquiring": {
+      "intercept": -1.5094636203346334,
+      "weights": {
+        "legal_form_ooo": -0.25025902642952946,
+        "business_age_months": -0.5640012826618616,
+        "monthly_turnover": -0.4889708279570171,
+        "monthly_payment_count": -0.47060491033307317,
+        "online_sales_share": -0.4690800429577415,
+        "has_business_account": -0.351934898053393,
+        "has_website": -0.19562432599091942,
+        "has_offline_point": 9.0,
+        "sells_on_marketplaces": -0.1299468020170589,
+        "employee_count": -0.46496912184769923,
+        "has_foreign_trade": -0.12344035813908405,
+        "needs_tax_reporting": -0.2857027811951869,
+        "uses_electronic_documents": -0.2368879418686426,
+        "wants_business_registration": -0.07313618210953109
+      }
+    },
+    "internet_acquiring": {
+      "intercept": -0.34833501300173025,
+      "weights": {
+        "legal_form_ooo": -0.07871560156939096,
+        "business_age_months": -0.04277019961809983,
+        "monthly_turnover": -0.08163126266818574,
+        "monthly_payment_count": 0.11206823273607504,
+        "online_sales_share": 4.609571181361062,
+        "has_business_account": -0.1944497065251922,
+        "has_website": 3.1325106138405285,
+        "has_offline_point": -0.16493430050054836,
+        "sells_on_marketplaces": -0.03355844482674156,
+        "employee_count": -0.11343612819923461,
+        "has_foreign_trade": 0.035239421938032214,
+        "needs_tax_reporting": -0.019950030780413575,
+        "uses_electronic_documents": 0.024151662889144842,
+        "wants_business_registration": -0.026647153134997742
+      }
+    },
+    "sbp_business": {
+      "intercept": 0.06925414010155637,
+      "weights": {
+        "legal_form_ooo": -0.08582358161325866,
+        "business_age_months": -0.03530560679716534,
+        "monthly_turnover": -0.002781477144824732,
+        "monthly_payment_count": 0.19216247674826792,
+        "online_sales_share": 3.0501046435251684,
+        "has_business_account": -0.04344476020610797,
+        "has_website": 2.3401568292261854,
+        "has_offline_point": 2.332954769970274,
+        "sells_on_marketplaces": 0.03625082160222194,
+        "employee_count": -0.02437874171575885,
+        "has_foreign_trade": 0.029357892922358804,
+        "needs_tax_reporting": 0.026590289293600133,
+        "uses_electronic_documents": 0.0792690437359471,
+        "wants_business_registration": 0.06472741774494856
+      }
+    },
+    "alfa_kassa": {
+      "intercept": -1.5094636203346334,
+      "weights": {
+        "legal_form_ooo": -0.25025902642952946,
+        "business_age_months": -0.5640012826618616,
+        "monthly_turnover": -0.4889708279570171,
+        "monthly_payment_count": -0.47060491033307317,
+        "online_sales_share": -0.4690800429577415,
+        "has_business_account": -0.351934898053393,
+        "has_website": -0.19562432599091942,
+        "has_offline_point": 9.0,
+        "sells_on_marketplaces": -0.1299468020170589,
+        "employee_count": -0.46496912184769923,
+        "has_foreign_trade": -0.12344035813908405,
+        "needs_tax_reporting": -0.2857027811951869,
+        "uses_electronic_documents": -0.2368879418686426,
+        "wants_business_registration": -0.07313618210953109
+      }
+    },
+    "alfapos": {
+      "intercept": -1.5094636203346334,
+      "weights": {
+        "legal_form_ooo": -0.25025902642952946,
+        "business_age_months": -0.5640012826618616,
+        "monthly_turnover": -0.4889708279570171,
+        "monthly_payment_count": -0.47060491033307317,
+        "online_sales_share": -0.4690800429577415,
+        "has_business_account": -0.351934898053393,
+        "has_website": -0.19562432599091942,
+        "has_offline_point": 9.0,
+        "sells_on_marketplaces": -0.1299468020170589,
+        "employee_count": -0.46496912184769923,
+        "has_foreign_trade": -0.12344035813908405,
+        "needs_tax_reporting": -0.2857027811951869,
+        "uses_electronic_documents": -0.2368879418686426,
+        "wants_business_registration": -0.07313618210953109
+      }
+    },
+    "payroll_project": {
+      "intercept": 1.3491492019753577,
+      "weights": {
+        "legal_form_ooo": 0.4061124495080181,
+        "business_age_months": 0.5550736205065389,
+        "monthly_turnover": 0.5370484987711759,
+        "monthly_payment_count": 0.47727775902296987,
+        "online_sales_share": 0.5665628795549316,
+        "has_business_account": 0.4712725684430374,
+        "has_website": 0.20589004967914473,
+        "has_offline_point": 0.5232386460906112,
+        "sells_on_marketplaces": 0.1734313144899686,
+        "employee_count": 1.4502547253907445,
+        "has_foreign_trade": 0.10373598600857596,
+        "needs_tax_reporting": 0.5387145733739349,
+        "uses_electronic_documents": 0.4441555452160582,
+        "wants_business_registration": 0.09198639555444316
+      }
+    },
+    "ved": {
+      "intercept": -1.6734973821356256,
+      "weights": {
+        "legal_form_ooo": -0.24970105313502144,
+        "business_age_months": -0.5470180321511335,
+        "monthly_turnover": -0.5507050771798576,
+        "monthly_payment_count": -0.4840854063280687,
+        "online_sales_share": -0.44901804911185267,
+        "has_business_account": -0.32411648431493595,
+        "has_website": -0.28141000010840317,
+        "has_offline_point": -0.2509367097143537,
+        "sells_on_marketplaces": -0.1927176755994683,
+        "employee_count": -0.6164048474634091,
+        "has_foreign_trade": 9.0,
+        "needs_tax_reporting": -0.35048859198200205,
+        "uses_electronic_documents": -0.26702054046774604,
+        "wants_business_registration": -0.0961638204353953
+      }
+    },
+    "business_accounting": {
+      "intercept": -1.4149599250414056,
+      "weights": {
+        "legal_form_ooo": -0.22083399315586574,
+        "business_age_months": -0.46443221921878103,
+        "monthly_turnover": -0.4545363158723078,
+        "monthly_payment_count": -0.4413240118521898,
+        "online_sales_share": -0.4057123883375985,
+        "has_business_account": -0.33057097839761734,
+        "has_website": -0.2011750009784513,
+        "has_offline_point": -0.23560252859135827,
+        "sells_on_marketplaces": -0.13134757453060977,
+        "employee_count": -0.38356210861185586,
+        "has_foreign_trade": -0.15623941438682326,
+        "needs_tax_reporting": 7.073342141846459,
+        "uses_electronic_documents": -0.30801261164013505,
+        "wants_business_registration": -0.06983684801284609
+      }
+    },
+    "marketplace_services": {
+      "intercept": -1.7043157624071184,
+      "weights": {
+        "legal_form_ooo": -0.323060221367084,
+        "business_age_months": -0.54299636209184,
+        "monthly_turnover": -0.498265983267432,
+        "monthly_payment_count": -0.5063718543043364,
+        "online_sales_share": -0.4595565341373496,
+        "has_business_account": -0.36587943426640884,
+        "has_website": -0.18636568427118186,
+        "has_offline_point": -0.23102272621874198,
+        "sells_on_marketplaces": 9.0,
+        "employee_count": -0.47222957111206154,
+        "has_foreign_trade": -0.1530667571364671,
+        "needs_tax_reporting": -0.28693754560737533,
+        "uses_electronic_documents": -0.21298278041636945,
+        "wants_business_registration": -0.10132264626910414
+      }
+    },
+    "business_registration": {
+      "intercept": -1.3833429635641543,
+      "weights": {
+        "legal_form_ooo": -0.24556639733111915,
+        "business_age_months": -1.2798248663990786,
+        "monthly_turnover": -0.3487848194521035,
+        "monthly_payment_count": -0.3949839438828981,
+        "online_sales_share": -0.3811052381124445,
+        "has_business_account": -0.27214612468763344,
+        "has_website": -0.25345079030271894,
+        "has_offline_point": -0.044493589042894036,
+        "sells_on_marketplaces": -0.010957037064064956,
+        "employee_count": -0.5001073162442796,
+        "has_foreign_trade": -0.1058143133712841,
+        "needs_tax_reporting": -0.14874165096029512,
+        "uses_electronic_documents": -0.2130822090404449,
+        "wants_business_registration": 5.157077806292596
+      }
+    },
+    "electronic_signature": {
+      "intercept": -0.8068898269345861,
+      "weights": {
+        "legal_form_ooo": -0.1740087573192025,
+        "business_age_months": -0.31050582846191366,
+        "monthly_turnover": -0.21805893939486742,
+        "monthly_payment_count": -0.3190200496114565,
+        "online_sales_share": -0.22307996709941902,
+        "has_business_account": -0.21860120192175722,
+        "has_website": -0.12391928908927602,
+        "has_offline_point": -0.11146174250178358,
+        "sells_on_marketplaces": -0.009354269085092468,
+        "employee_count": -0.25769379472002846,
+        "has_foreign_trade": -0.04334134524367936,
+        "needs_tax_reporting": 4.994801755605701,
+        "uses_electronic_documents": 4.66278376082687,
+        "wants_business_registration": 0.006182008633694351
+      }
+    }
+  }
+}
